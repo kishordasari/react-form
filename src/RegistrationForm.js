@@ -69,7 +69,7 @@ const RegistrationForm = () => {
               direction="row"
               justifyContent="space-between"
               alignItems="center"
-              style={{margin:'20px 0px', position:'fixed', zIndex: 1, width: 'calc(45% - 18px)', top: '0px', left: 'auto', background:'#fff'}}
+              style={{padding:'20px 0px', position:'fixed', zIndex: 1, width: 'calc(45% - 18px)', top: '0px', left: 'auto', background:'#fff'}}
             >
             <Typography component="div"><Link style={{display:'flex', alignItems:'center', textDecoration:'none', color:'green'}}><Settings />Quality Health</Link></Typography>
             <Button variant="outlined">How it works</Button>
@@ -80,12 +80,12 @@ const RegistrationForm = () => {
               margin: '0px auto',
             }}
             >
-              <Typography component="h1" variant="h5" align="center" style={{paddingTop: '100px'}}>
+              <Typography component="h1" variant="h5" align="center" style={{paddingTop: '100px', fontFamily:'Tiempos Headline Regular', fontSize:'3rem', color:'green'}}>
                 Sign Up
               </Typography>
               <Box style={{padding: '10px'}} component="form" onSubmit={formik.handleSubmit} sx={{ mt: 1 }}>
-                <Paper elevation={3} style={{padding: '10px'}}>
-                <Typography component="div" variant="b1" style={{display: 'flex', alignItems:'center', fontSize: '18px', borderBottom: 'solid 1px rgb(204, 204, 204)', paddingBottom:'15px'}}>
+                <Paper elevation={3} style={{padding: '8px'}}>
+                <Typography component="div" variant="b1" style={{display: 'flex', alignItems:'center', fontSize: '18px', borderBottom: 'solid 1px rgb(204, 204, 204)', padding:' 15px 15px 15px 0px'}}>
                   <BadgeIcon /> &nbsp; Your information
                 </Typography>
                 <TextField
@@ -109,6 +109,7 @@ const RegistrationForm = () => {
                       </InputAdornment>
                     ),
                   }}
+                  style={{margin: '0px'}}
                 />
                 <TextField
                   fullWidth
@@ -131,6 +132,7 @@ const RegistrationForm = () => {
                       </InputAdornment>
                     ),
                   }}
+                  style={{margin: '0px'}}
                 />
                 <Grid container spacing={2}>
                   <Grid item xs={12} sm={6}>
@@ -155,6 +157,7 @@ const RegistrationForm = () => {
                           </InputAdornment>
                         ),
                       }}
+                      style={{margin: '0px 0px 20px 0px'}}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -179,6 +182,7 @@ const RegistrationForm = () => {
                           </InputAdornment>
                         ),
                       }}
+                      style={{margin: '0px 0px 20px 0px'}}
                     />
                   </Grid>
                 </Grid>
@@ -207,6 +211,7 @@ const RegistrationForm = () => {
                       </InputAdornment>
                     ),
                   }}
+                  style={{margin: '0px'}}
                 />
                 <TextField
                   fullWidth
@@ -221,6 +226,7 @@ const RegistrationForm = () => {
                   helperText={formik.touched.gender && formik.errors.gender}
                   margin="normal"
                   variant='standard'
+                  style={{margin: '0px'}}
                 >
                   <MenuItem value="male">Male</MenuItem>
                   <MenuItem value="female">Female</MenuItem>
@@ -249,6 +255,7 @@ const RegistrationForm = () => {
                       </InputAdornment>
                     ),
                   }}
+                  style={{margin: '0px'}}
                 />
                 </Paper>
                 <Button

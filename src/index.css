@@ -20,3 +20,42 @@ img.fullsize{
     width: 100%;
     height: 100%;
 }
+
+.css-17vbkzs-MuiFormControl-root-MuiTextField-root{
+  padding: 8px 0px !important;
+}
+
+@media screen and (max-width: 580px) {
+
+  img.fullsize{
+    position: relative;
+  }
+
+  .css-9cyib4-MuiGrid-root{
+    width: calc(100% - 0px) !important;
+    background-color: #fff;
+    margin: 0px -16px !important;
+    padding: 20px 16px !important;
+  }
+
+  .css-wzx5qn-MuiGrid-root{
+    overflow: initial !important;
+  }
+
+  .css-1n90q7k{
+    overflow: initial !important;
+    padding-bottom: 24px;
+  }
+
+  .css-17vbkzs-MuiFormControl-root-MuiTextField-root{
+    margin-bottom: 0px !important;
+  }
+
+  .css-ph2xsj-MuiTypography-root{
+    padding-top: 24px !important;
+  }
+
+  .css-mhc70k-MuiGrid-root>.MuiGrid-item{
+    padding-top: 10px !important;
+  }
+}
