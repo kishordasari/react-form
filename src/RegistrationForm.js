@@ -16,6 +16,7 @@ const RegistrationForm = () => {
       address: '',
       city: '',
       state: '',
+      mobileNumber:'',
       dateOfBirth: '',
       gender: '',
       email: '',
@@ -33,7 +34,9 @@ const RegistrationForm = () => {
       state: Yup.string()
         .max(50, 'Must be 50 characters or less')
         .required('Required'),
-      dateOfBirth: Yup.date()
+        mobileNumber: Yup.string()
+        .required('Required'),
+        dateOfBirth: Yup.date()
         .required('Required'),
       gender: Yup.string()
         .oneOf(['male', 'female', 'other'], 'Invalid Gender')
@@ -157,7 +160,7 @@ const RegistrationForm = () => {
                           </InputAdornment>
                         ),
                       }}
-                      style={{margin: '0px 0px 20px 0px'}}
+                      style={{margin: '0px 0px 0px 0px'}}
                     />
                   </Grid>
                   <Grid item xs={12} sm={6}>
@@ -182,10 +185,33 @@ const RegistrationForm = () => {
                           </InputAdornment>
                         ),
                       }}
-                      style={{margin: '0px 0px 20px 0px'}}
+                      style={{margin: '0px 0px 0px 0px'}}
                     />
                   </Grid>
                 </Grid>
+                <TextField
+                  fullWidth
+                  id="mobileNumber"
+                  name="mobileNumber"
+                  label="Mobile Number"
+                  value={formik.values.mobileNumber}
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  error={formik.touched.mobileNumber && Boolean(formik.errors.mobileNumber)}
+                  helperText={formik.touched.mobileNumber && formik.errors.mobileNumber}
+                  margin="normal"
+                  variant='standard'
+                  InputProps={{
+                    endAdornment: (
+                      <InputAdornment position="end">
+                        <IconButton edge="end">
+                          <EditIcon />
+                        </IconButton>
+                      </InputAdornment>
+                    ),
+                  }}
+                  style={{margin: '0px'}}
+                />
                 <TextField
                   fullWidth
                   id="dateOfBirth"
