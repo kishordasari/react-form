@@ -55,25 +55,32 @@ const RegistrationForm = () => {
           display: 'flex',
           flexDirection: 'column',
           alignItems: 'center',
+          height: '100vh',
+          overflow: 'hidden'
         }}
       >
         <Grid container spacing={2} sx={{ height: '100vh' }}>
-          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5' }}>
-            <img src={require('./Banner.jpg')} alt='Banner' />  
+          <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5', padding: '0px !important', position:'relative' }}>
+            <img src={require('./Banner.jpg')} alt='Banner' className='fullsize' />  
           </Grid>
-          <Grid item xs={12} md={6} sx={{ display: 'block', justifyContent: 'center', alignItems: 'center' }}>
+          <Grid item xs={12} md={6} sx={{ display: 'block', justifyContent: 'center', alignItems: 'center', height: '100vh', overflowY: 'scroll', position:'relative' }}>
             <Grid
               container
               direction="row"
               justifyContent="space-between"
               alignItems="center"
-              style={{margin:'20px 0px'}}
+              style={{margin:'20px 0px', position:'fixed', zIndex: 1, width: 'calc(45% - 18px)', top: '0px', left: 'auto', background:'#fff'}}
             >
             <Typography component="div"><Link style={{display:'flex', alignItems:'center', textDecoration:'none', color:'green'}}><Settings />Quality Health</Link></Typography>
             <Button variant="outlined">How it works</Button>
             </Grid>
-            <Box sx={{ width: '50%', margin: '0px auto' }}>
-              <Typography component="h1" variant="h5" align="center">
+            <Box 
+            sx={{ 
+              width: { xs: '100%', md: '50%' }, 
+              margin: '0px auto',
+            }}
+            >
+              <Typography component="h1" variant="h5" align="center" style={{paddingTop: '100px'}}>
                 Sign Up
               </Typography>
               <Box style={{padding: '10px'}} component="form" onSubmit={formik.handleSubmit} sx={{ mt: 1 }}>
