@@ -35,7 +35,8 @@ const RegistrationForm = () => {
         .max(50, 'Must be 50 characters or less')
         .required('Required'),
         mobileNumber: Yup.string()
-        .required('Required'),
+        .matches(/^\d+$/, "Mobile number must be digits only")
+        .required("Mobile number is required"),
         dateOfBirth: Yup.date()
         .required('Required'),
       gender: Yup.string()
@@ -51,7 +52,7 @@ const RegistrationForm = () => {
   });
 
   return (
-    <Container component="main" maxWidth="xl">
+    <Container component="main" maxWidth="xl" style={{padding: '0px'}}>
       <Box
         sx={{
           padding: 0,
@@ -62,11 +63,11 @@ const RegistrationForm = () => {
           overflow: 'hidden'
         }}
       >
-        <Grid container spacing={2} sx={{ height: '100vh' }}>
+        <Grid container spacing={2} sx={{ height: '100vh' }} style={{margin: '0px'}}>
           <Grid item xs={12} md={6} sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', backgroundColor: '#f5f5f5', padding: '0px !important', position:'relative' }}>
             <img src={require('./Banner.jpg')} alt='Banner' className='fullsize' />  
           </Grid>
-          <Grid item xs={12} md={6} sx={{ display: 'block', justifyContent: 'center', alignItems: 'center', height: '100vh', overflowY: 'scroll', position:'relative' }}>
+          <Grid item xs={12} md={6} sx={{ display: 'block', justifyContent: 'center', alignItems: 'center', height: '100vh', overflowX: 'hidden', overflowY: 'scroll', position:'relative' }}>
             <Grid
               container
               direction="row"
@@ -80,15 +81,15 @@ const RegistrationForm = () => {
             <Box 
             sx={{ 
               width: { xs: '100%', md: '50%' }, 
-              margin: '0px auto',
+              margin: '0px auto 10px auto',
             }}
             >
-              <Typography component="h1" variant="h5" align="center" style={{paddingTop: '100px', fontFamily:'Tiempos Headline Regular', fontSize:'3rem', color:'green'}}>
+              <Typography component="h1" variant="h5" align="center" style={{paddingTop: '60px', fontFamily:'Tiempos Headline Regular', fontSize:'3rem', color:'green'}}>
                 Sign Up
               </Typography>
               <Box style={{padding: '10px'}} component="form" onSubmit={formik.handleSubmit} sx={{ mt: 1 }}>
                 <Paper elevation={3} style={{padding: '8px'}}>
-                <Typography component="div" variant="b1" style={{display: 'flex', alignItems:'center', fontSize: '18px', borderBottom: 'solid 1px rgb(204, 204, 204)', padding:' 15px 15px 15px 0px'}}>
+                <Typography component="div" variant="b1" style={{display: 'flex', alignItems:'center', fontSize: '18px', borderBottom: 'solid 1px rgb(204, 204, 204)', padding:' 10px 15px 10px 0px'}}>
                   <BadgeIcon /> &nbsp; Your information
                 </Typography>
                 <TextField
@@ -190,6 +191,7 @@ const RegistrationForm = () => {
                   </Grid>
                 </Grid>
                 <TextField
+                  className='mobileno'
                   fullWidth
                   id="mobileNumber"
                   name="mobileNumber"
@@ -280,6 +282,12 @@ const RegistrationForm = () => {
                         </IconButton>
                       </InputAdornment>
                     ),
+                    inputProps: {
+                      style: { padding: '10px' },
+                    },
+                  }}
+                  InputLabelProps={{
+                    style: { top: '-4px' },
                   }}
                   style={{margin: '0px'}}
                 />

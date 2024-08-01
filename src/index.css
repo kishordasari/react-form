@@ -22,7 +22,17 @@ img.fullsize{
 }
 
 .css-17vbkzs-MuiFormControl-root-MuiTextField-root{
-  padding: 8px 0px !important;
+  padding: 0px 0px !important;
+}
+
+
+label.MuiFormLabel-filled,
+label.Mui-error{
+  transform: translate(0, 4.5px) scale(0.75) !important;
+}
+
+.mobileno{
+  margin-bottom: 10px !important;
 }
 
 @media screen and (max-width: 580px) {
@@ -34,7 +44,7 @@ img.fullsize{
   .css-9cyib4-MuiGrid-root{
     width: calc(100% - 0px) !important;
     background-color: #fff;
-    margin: 0px -16px !important;
+    margin: 0px -10px !important;
     padding: 20px 16px !important;
   }
 
